@@ -2,13 +2,11 @@ document.addEventListener("DOMContentLoaded", () => {
   try {
     console.log("DOM fully loaded and parsed");
 
-    // Remove fragment identifier from URL
     if (window.location.hash) {
       history.replaceState(null, null, " ");
     }
 
     try {
-      // Create HTML content dynamically
       const body = document.body;
 
       function createNav() {
@@ -241,11 +239,13 @@ document.addEventListener("DOMContentLoaded", () => {
               title: "Prosjekt-1",
               desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse cum fugiat quaerat. Aliquid accusamus, provident autem, aperiam magnam recusandae vero obcaecati asperiores ratione veniam, placeat perferendis nemo! In asperiores laudantium unde perferendis, blanditiis at nulla voluptate nesciunt exercitationem pariatur sunt.",
               img: "./pics/web-design.jpg",
+              link: "https://olem-kodehode4.github.io/React-menu-app/",
             },
             {
               title: "Prosjekt-2",
               desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse cum fugiat quaerat. Aliquid accusamus, provident autem, aperiam magnam recusandae vero obcaecati asperiores ratione veniam, placeat perferendis nemo! In asperiores laudantium unde perferendis, blanditiis at nulla voluptate nesciunt exercitationem pariatur sunt.",
               img: "./pics/web-dev.jpg",
+              link: "https://olem-kodehode4.github.io/juleoppgave/",
             },
             {
               title: "Prosjekt-3",
@@ -265,9 +265,19 @@ document.addEventListener("DOMContentLoaded", () => {
             const img = document.createElement("img");
             img.src = project.img;
             img.alt = project.title;
+            const btn2 = document.createElement("button");
+            btn2.className = "btn2";
+            btn2.textContent = "Vis prosjekt";
+            btn2.addEventListener("click", () => {
+              const modal = document.getElementById("projectModal");
+              const iframe = document.getElementById("projectFrame");
+              iframe.src = project.link;
+              modal.style.display = "block";
+            });
             box.appendChild(h1);
             box.appendChild(p);
             box.appendChild(img);
+            box.appendChild(btn2);
             div.appendChild(box);
           });
           return div;
@@ -440,4 +450,16 @@ document.addEventListener("DOMContentLoaded", () => {
   } catch (error) {
     console.error("Error initializing DOMContentLoaded event:", error);
   }
+
+  // Modal close functionality
+  const modal = document.getElementById("projectModal");
+  const span = document.getElementsByClassName("close")[0];
+  span.onclick = function () {
+    modal.style.display = "none";
+  };
+  window.onclick = function (event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  };
 });
