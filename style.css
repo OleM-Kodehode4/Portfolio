@@ -7,6 +7,7 @@
   scroll-behavior: smooth;
   font-family: "Poppins", sans-serif;
 }
+
 :root {
   --background: rgb(24, 24, 24);
   --second-background: rgb(20, 20, 20);
@@ -29,14 +30,14 @@ nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: rgb(15, 15, 15, 0.8);
+  background-color: rgba(15, 15, 15, 0.8);
   backdrop-filter: blur(10px);
   z-index: 1000;
   transition: background-color 0.3s ease-in-out;
 }
 
 nav.scrolled {
-  background-color: rgb(15, 15, 15, 1);
+  background-color: rgba(15, 15, 15, 1);
 }
 
 ul {
@@ -44,6 +45,7 @@ ul {
   align-items: center;
   gap: 3em;
 }
+
 nav ul a {
   color: var(--text-color-contrast);
   opacity: 0.7;
@@ -129,22 +131,26 @@ section {
   gap: 1em;
   max-width: 600px;
 }
+
+.info-box h1,
+.info-box h3,
+.info-box p {
+  animation: fadeIn 1s ease-in-out;
+}
+
 .info-box h1 {
   font-size: 4em;
   font-weight: 500;
-  animation: fadeIn 1s ease-in-out;
 }
 
 .info-box h3 {
   font-size: 2em;
   font-weight: 400;
-  animation: fadeIn 1s ease-in-out;
 }
 
 .info-box p {
   opacity: 0.7;
   color: var(--text-color-contrast);
-  animation: fadeIn 1s ease-in-out;
 }
 
 .btn-box {
@@ -163,13 +169,18 @@ section {
 }
 
 ::-webkit-scrollbar {
-  width: 20px;
+  width: 10px;
+  height: 10px;
   background-color: var(--background);
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: red;
+  background-color: grey;
   border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: lightgray;
 }
 
 #skill {
@@ -432,7 +443,7 @@ section {
     display: flex;
     flex-direction: column;
     text-align: center;
-    background-color: rgb(0, 0, 0, 0.8);
+    background-color: rgba(0, 0, 0, 0.8);
     display: none;
   }
   .links a {
