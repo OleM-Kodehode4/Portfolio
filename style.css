@@ -305,41 +305,17 @@ section {
   margin-bottom: 1em;
 }
 
-.about a {
-  color: var(--linear-gradient);
-  text-decoration: none;
+.about p {
   font-size: 1.2em;
-  transition: color 0.3s ease-in-out;
+  opacity: 0.8;
 }
 
-.about a:hover {
-  color: white;
-}
-
-.about .download-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0.5em 1em;
-  color: white;
-  font-weight: 500;
-  letter-spacing: 1px;
-  border-radius: 0.5em;
-  font-size: 1.1em;
-  border: 2px solid white;
-  cursor: pointer;
-  transition: 0.3s ease-in-out;
-  background-color: var(--background);
-  text-decoration: none;
-}
-
-.about .download-btn:hover {
-  background-color: white;
-  color: var(--background);
-}
-
+/* Fjern unødvendige stiler */
+.about a,
+.about .download-btn,
+.about .download-btn:hover,
 .about .download-btn span {
-  margin-left: 0.5em;
+  display: none;
 }
 
 #contact {
@@ -505,7 +481,7 @@ footer {
   gap: 1em;
 }
 
-col-box i {
+.col-box i {
   font-size: 2em;
   color: white;
 }
@@ -687,7 +663,6 @@ img {
   height: auto;
 }
 
-/* General reusable classes */
 .section {
   min-height: 100vh;
   padding: 5% 15%;
@@ -753,4 +728,62 @@ img {
 .info-box p {
   opacity: 0.7;
   animation: fadeIn 1s ease-in-out;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1001;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.modal-content {
+  background-color: var(--background);
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 600px;
+  border-radius: 10px;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.btn2 {
+  padding: 0.5em 1em;
+  color: black;
+  font-weight: 500;
+  letter-spacing: 1px;
+  border-radius: 0.5em;
+  font-size: 1.1em;
+  border: 2px solid rgb(255, 82, 82);
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+
+.btn2:hover {
+  background-color: white;
+  color: var(--background);
+}
+
+.btn2:focus {
+  outline: 2px solid white;
+  outline-offset: 2px;
 }
