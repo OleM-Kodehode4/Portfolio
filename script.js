@@ -27,14 +27,8 @@ document.addEventListener("DOMContentLoaded", () => {
           const ul = document.createElement("ul");
           ul.className = "links";
 
-          const links = [
-            "Hjem",
-            "Ferdigheter",
-            "Prosjekter",
-            "Om meg",
-            "Kontakt",
-          ];
-          const ids = ["home", "skill", "project", "about", "contact"];
+          const links = ["Hjem", "Ferdigheter", "Prosjekter", "Om meg"];
+          const ids = ["home", "skill", "project", "about"];
           links.forEach((link, index) => {
             const li = document.createElement("li");
             const a = document.createElement("a");
@@ -116,6 +110,8 @@ document.addEventListener("DOMContentLoaded", () => {
           const img = document.createElement("img");
           img.src = "./pics/pic-ole-1.jpg";
           img.alt = "Ole Mathias";
+          img.dataset.src = "./pics/pic-ole-1.jpg";
+          img.classList.add("lazy");
           return img;
         })(),
         (() => {
@@ -128,14 +124,29 @@ document.addEventListener("DOMContentLoaded", () => {
           h1.appendChild(h1Span);
           const h3 = document.createElement("h3");
           const h3Span = document.createElement("span");
-          h3Span.textContent = "Jr.Frontend";
+          h3Span.textContent = "Jr. Frontend | IT-Dev";
           h3.appendChild(h3Span);
           const p = document.createElement("p");
-          p.textContent =
-            "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Obcaecati, labore!";
+          p.textContent = "Laster inn en vits...";
           div.appendChild(h1);
           div.appendChild(h3);
           div.appendChild(p);
+          fetch(
+            "https://v2.jokeapi.dev/joke/Programming?blacklistFlags=racist,sexist,explicit"
+          )
+            .then((response) => response.json())
+            .then((data) => {
+              if (data.type === "single") {
+                p.textContent = data.joke;
+              } else {
+                p.textContent = `${data.setup} - ${data.delivery}`;
+              }
+            })
+            .catch((error) => {
+              p.textContent = "Kunne ikke laste inn en vits.";
+              console.error("Error fetching joke:", error);
+            });
+
           return div;
         })(),
         (() => {
@@ -144,9 +155,15 @@ document.addEventListener("DOMContentLoaded", () => {
           const btn1 = document.createElement("div");
           btn1.className = "btn";
           btn1.textContent = "Github";
+          btn1.addEventListener("click", () => {
+            window.open("https://github.com/OleM-Kodehode4", "_blank");
+          });
           const btn2 = document.createElement("div");
           btn2.className = "btn";
           btn2.textContent = "Kontakt meg";
+          btn2.addEventListener("click", () =>
+            contact.scrollIntoView({ behavior: "smooth" })
+          );
           div.appendChild(btn1);
           div.appendChild(btn2);
           return div;
@@ -159,17 +176,7 @@ document.addEventListener("DOMContentLoaded", () => {
           div.className = "skill-box";
           const skillInfo = document.createElement("div");
           skillInfo.className = "skill-info";
-          const h1 = document.createElement("h1");
-          h1.id = "skil-header";
-          const h1Span = document.createElement("span");
-          h1Span.textContent = "(WIP)";
-          h1.appendChild(h1Span);
-          const p = document.createElement("p");
-          p.textContent =
-            "Her kommer en quote API, når jeg finner en som fungerer og ikke slutter å fungere når brukeren reloader siden";
-          skillInfo.appendChild(h1);
-          skillInfo.appendChild(p);
-          const h2 = document.createElement("h2");
+          const h2 = document.createElement("h1");
           const h2Span = document.createElement("span");
           const h2Icon = document.createElement("i");
           h2Icon.className = "bx bx-code-alt";
@@ -211,12 +218,15 @@ document.addEventListener("DOMContentLoaded", () => {
           div.appendChild(skillInfo);
           div.appendChild(h2);
           div.appendChild(skillsDiv);
+
           return div;
         })(),
         (() => {
           const img = document.createElement("img");
           img.src = "./pics/pic-ole-2.jpg";
           img.alt = "Ole Mathias";
+          img.dataset.src = "./pics/pic-ole-2.jpg";
+          img.classList.add("lazy");
           return img;
         })(),
       ]);
@@ -265,6 +275,8 @@ document.addEventListener("DOMContentLoaded", () => {
             const img = document.createElement("img");
             img.src = project.img;
             img.alt = project.title;
+            img.dataset.src = project.img;
+            img.classList.add("lazy");
             const btn2 = document.createElement("button");
             btn2.className = "btn2";
             btn2.textContent = "Vis prosjekt";
@@ -300,7 +312,11 @@ document.addEventListener("DOMContentLoaded", () => {
           const abouts = [
             {
               title: "Fakta",
-              desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse cum fugiat quaerat. Aliquid accusamus, provident autem, aperiam magnam recusandae vero obcaecati asperiores ratione veniam, placeat perferendis nemo! In asperiores laudantium unde perferendis, blanditiis at nulla voluptate nesciunt exercitationem pariatur sunt.",
+              desc: [
+                "Hei, jeg heter Ole Brænde, en engasjert og nysgjerrig utvikler som brenner for å skape løsninger som gir verdi. Med interesse for hele spekteret av utvikling er jeg alltid motivert til å lære mer og ta i bruk nye verktøy og teknologier.",
+                "Det som driver meg, er muligheten til å løse problemer gjennom effektiv kode og innovative løsninger. Jeg er detaljorientert, samtidig som jeg har et sterkt fokus på brukervennlighet og ytelse. Ved å holde meg oppdatert på moderne teknologi, sørger jeg for å levere løsninger som er både robuste og fremtidsrettede.",
+                "Jeg trives i team der jeg kan samarbeide tett med andre utviklere, dele kunnskap og kontinuerlig forbedre både meg selv og prosjektene jeg jobber med. Enten det handler om frontend, backend eller noe midt imellom, er jeg klar til å ta utfordringen og bidra.",
+              ],
             },
             // {
             //   title: "Erfaring og kompetanse",
@@ -314,85 +330,20 @@ document.addEventListener("DOMContentLoaded", () => {
             const h1Span = document.createElement("span");
             h1Span.textContent = about.title;
             h1.appendChild(h1Span);
-            const p = document.createElement("p");
-            p.textContent = about.desc;
             box.appendChild(h1);
-            box.appendChild(p);
+            about.desc.forEach((paragraph) => {
+              const p = document.createElement("p");
+              p.textContent = paragraph;
+              box.appendChild(p);
+            });
             div.appendChild(box);
           });
           return div;
         })(),
       ]);
 
-      createSection("contact", [
-        (() => {
-          const h1 = document.createElement("h1");
-          h1.id = "contact-header";
-          h1.className = "header";
-          const h1Span = document.createElement("span");
-          h1Span.textContent = "Kontakt Meg";
-          h1.appendChild(h1Span);
-          return h1;
-        })(),
-        (() => {
-          const div = document.createElement("div");
-          div.className = "contact-info";
-          const ul = document.createElement("ul");
-          const contacts = [
-            { icon: "github", text: "GitHub" },
-            { icon: "linkedin", text: "Linkedin" },
-          ];
-          contacts.forEach((contact) => {
-            const li = document.createElement("li");
-            const span = document.createElement("span");
-            const icon = document.createElement("i");
-            icon.className = `bx bxl-${contact.icon}`;
-            span.appendChild(icon);
-            span.appendChild(document.createTextNode(` ${contact.text}`));
-            li.appendChild(span);
-            ul.appendChild(li);
-          });
-          div.appendChild(ul);
-          return div;
-        })(),
-        (() => {
-          const div = document.createElement("div");
-          div.className = "contact-box";
-          const contactInfo = document.createElement("div");
-          contactInfo.className = "contact-info";
-          const ul = document.createElement("ul");
-          const infos = [
-            { icon: "map", text: "Norge" },
-            { icon: "phone", text: "+47 123 45 678" },
-            { icon: "envelope", text: "example@example.com" },
-          ];
-          infos.forEach((info) => {
-            const li = document.createElement("li");
-            const span = document.createElement("span");
-            const icon = document.createElement("i");
-            icon.className = `bx bx-${info.icon}`;
-            span.appendChild(icon);
-            span.appendChild(document.createTextNode(` ${info.text}`));
-            li.appendChild(span);
-            ul.appendChild(li);
-          });
-          contactInfo.appendChild(ul);
-          const downloadBtn = document.createElement("a");
-          downloadBtn.href = "./resume.pdf";
-          downloadBtn.className = "download-btn";
-          downloadBtn.download = true;
-          const downloadIcon = document.createTextNode("📄");
-          const downloadSpan = document.createElement("span");
-          downloadSpan.textContent = "Download Resume";
-          downloadBtn.appendChild(downloadIcon);
-          downloadBtn.appendChild(downloadSpan);
-          div.appendChild(contactInfo);
-          div.appendChild(downloadBtn);
-          return div;
-        })(),
-      ]);
-
-      const footer = document.createElement("footer");
+      const footer = document.createElement("contact");
+      footer.id = "contact";
       const colLeft = document.createElement("div");
       colLeft.className = "col-left";
       const colBox1 = document.createElement("div");
@@ -431,11 +382,20 @@ document.addEventListener("DOMContentLoaded", () => {
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam voluptatem, quod, quae, quos quas quia quibusdam quidem dolorum voluptates, doloremque quae. Quisquam voluptatem, quod, quae, quos quas quia quibusdam quidem dolorum voluptates, doloremque quae.";
       const socialIcons = document.createElement("div");
       socialIcons.className = "social-icons";
-      ["github", "twitter", "instagram", "linkedin"].forEach((icon) => {
+      const socialLinks = [
+        { icon: "github", url: "https://github.com/yourprofile" },
+        { icon: "linkedin", url: "https://linkedin.com/in/yourprofile" },
+        { icon: "discord-alt", url: "https://discord.com/yourprofile" },
+      ];
+      socialLinks.forEach((social) => {
         const span = document.createElement("span");
+        const a = document.createElement("a");
+        a.href = social.url;
+        a.target = "click";
         const i = document.createElement("i");
-        i.className = `bx bxl-${icon}`;
-        span.appendChild(i);
+        i.className = `bx bxl-${social.icon}`;
+        a.appendChild(i);
+        span.appendChild(a);
         socialIcons.appendChild(span);
       });
       colRight.appendChild(colRightSpan);
@@ -451,7 +411,33 @@ document.addEventListener("DOMContentLoaded", () => {
     console.error("Error initializing DOMContentLoaded event:", error);
   }
 
-  // Modal close functionality
+  const lazyImages = document.querySelectorAll("img");
+  const imageObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        const img = entry.target;
+        img.src = img.dataset.src;
+        img.classList.remove("lazy");
+        observer.unobserve(img);
+      }
+    });
+  });
+
+  lazyImages.forEach((img) => {
+    imageObserver.observe(img);
+  });
+
+  document.querySelectorAll("a, button").forEach((element) => {
+    element.addEventListener("focus", () => {
+      element.style.outline = "2px solid var(--linear-gradient)";
+      element.style.outlineOffset = "2px";
+    });
+    element.addEventListener("blur", () => {
+      element.style.outline = "none";
+      element.style.outlineOffset = "0";
+    });
+  });
+
   const modal = document.getElementById("projectModal");
   const span = document.getElementsByClassName("close")[0];
   span.onclick = function () {
@@ -463,7 +449,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   };
 
-  // Back to top button functionality
   const backToTopButton = document.getElementById("back-to-top");
 
   window.addEventListener("scroll", () => {
@@ -478,6 +463,25 @@ document.addEventListener("DOMContentLoaded", () => {
     window.scrollTo({
       top: 0,
       behavior: "smooth",
+    });
+  });
+
+  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+    anchor.addEventListener("click", function (e) {
+      e.preventDefault();
+      document.querySelector(this.getAttribute("href")).scrollIntoView({
+        behavior: "smooth",
+      });
+    });
+  });
+
+  // Add hover effect to project boxes
+  document.querySelectorAll(".box").forEach((box) => {
+    box.addEventListener("mouseover", () => {
+      box.style.transform = "scale(1.05)";
+    });
+    box.addEventListener("mouseout", () => {
+      box.style.transform = "scale(1)";
     });
   });
 });
