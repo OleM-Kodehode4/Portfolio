@@ -1,6 +1,4 @@
 document.addEventListener("DOMContentLoaded", () => {
-  console.log("DOM fully loaded and parsed");
-
   if (window.location.hash) {
     history.replaceState(null, null, " ");
   }
@@ -8,7 +6,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const body = document.body;
 
   function createNav() {
-    console.log("Creating navigation");
     const navElement = document.createElement("nav");
     navElement.setAttribute("role", "navigation");
 
@@ -52,7 +49,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     body.appendChild(navElement);
 
-    // Add event listener for the menu after it has been created
     const menu = document.querySelector("#menu");
     const nav = document.querySelector(".links");
 
@@ -61,7 +57,6 @@ document.addEventListener("DOMContentLoaded", () => {
       nav.classList.toggle("active");
     });
 
-    // Add scroll event listener for sticky header
     window.addEventListener("scroll", () => {
       if (window.scrollY > 50) {
         navElement.classList.add("scrolled");
@@ -72,7 +67,6 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function createSection(id, content) {
-    console.log("Creating section:", id);
     const section = document.createElement("section");
     section.id = id;
     section.setAttribute("role", "region");
@@ -174,7 +168,6 @@ document.addEventListener("DOMContentLoaded", () => {
           const li = document.createElement("li");
           const span = document.createElement("span");
           const icon = document.createElement("i");
-          icon.className = `bx bxl-${skill.toLowerCase()}`;
           if (skill.toLowerCase() === "html") {
             icon.className = "bx bxl-html5";
           } else if (skill.toLowerCase() === "css") {
@@ -464,7 +457,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // Add hover effect to project boxes
   document.querySelectorAll(".box").forEach((box) => {
     box.addEventListener("mouseover", () => {
       box.style.transform = "scale(1.05)";
