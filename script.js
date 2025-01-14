@@ -302,10 +302,10 @@ document.addEventListener("DOMContentLoaded", () => {
               title: "Fakta",
               desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse cum fugiat quaerat. Aliquid accusamus, provident autem, aperiam magnam recusandae vero obcaecati asperiores ratione veniam, placeat perferendis nemo! In asperiores laudantium unde perferendis, blanditiis at nulla voluptate nesciunt exercitationem pariatur sunt.",
             },
-            {
-              title: "Erfaring og kompetanse",
-              desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse cum fugiat quaerat. Aliquid accusamus, provident autem, aperiam magnam recusandae vero obcaecati asperiores ratione veniam, placeat perferendis nemo! In asperiores laudantium unde perferendis, blanditiis at nulla voluptate nesciunt exercitationem pariatur sunt.",
-            },
+            // {
+            //   title: "Erfaring og kompetanse",
+            //   desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse cum fugiat quaerat. Aliquid accusamus, provident autem, aperiam magnam recusandae vero obcaecati asperiores ratione veniam, placeat perferendis nemo! In asperiores laudantium unde perferendis, blanditiis at nulla voluptate nesciunt exercitationem pariatur sunt.",
+            // },
           ];
           abouts.forEach((about) => {
             const box = document.createElement("div");
@@ -462,4 +462,22 @@ document.addEventListener("DOMContentLoaded", () => {
       modal.style.display = "none";
     }
   };
+
+  // Back to top button functionality
+  const backToTopButton = document.getElementById("back-to-top");
+
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 300) {
+      backToTopButton.classList.add("visible");
+    } else {
+      backToTopButton.classList.remove("visible");
+    }
+  });
+
+  backToTopButton.addEventListener("click", () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  });
 });

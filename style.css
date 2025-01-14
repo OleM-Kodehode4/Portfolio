@@ -305,41 +305,17 @@ section {
   margin-bottom: 1em;
 }
 
-.about a {
-  color: var(--linear-gradient);
-  text-decoration: none;
+.about p {
   font-size: 1.2em;
-  transition: color 0.3s ease-in-out;
+  opacity: 0.8;
 }
 
-.about a:hover {
-  color: white;
-}
-
-.about .download-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0.5em 1em;
-  color: white;
-  font-weight: 500;
-  letter-spacing: 1px;
-  border-radius: 0.5em;
-  font-size: 1.1em;
-  border: 2px solid white;
-  cursor: pointer;
-  transition: 0.3s ease-in-out;
-  background-color: var(--background);
-  text-decoration: none;
-}
-
-.about .download-btn:hover {
-  background-color: white;
-  color: var(--background);
-}
-
+/* Fjern unødvendige stiler */
+.about a,
+.about .download-btn,
+.about .download-btn:hover,
 .about .download-btn span {
-  margin-left: 0.5em;
+  display: none;
 }
 
 #contact {
@@ -505,7 +481,7 @@ footer {
   gap: 1em;
 }
 
-col-box i {
+.col-box i {
   font-size: 2em;
   color: white;
 }
