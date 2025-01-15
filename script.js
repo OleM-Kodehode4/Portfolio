@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
     navElement.setAttribute("role", "navigation");
 
     const logo = document.createElement("a");
-    logo.href = "#";
+    logo.href = "#home";
     logo.className = "logo";
     const logoSpan = document.createElement("span");
     logoSpan.textContent = "Portfolio";
@@ -80,7 +80,9 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function fetchJoke(p) {
-    fetch("https://v2.jokeapi.dev/joke/Programming?blacklistFlags=racist,sexist,explicit")
+    fetch(
+      "https://v2.jokeapi.dev/joke/Programming?blacklistFlags=racist,sexist,explicit"
+    )
       .then((response) => response.json())
       .then((data) => {
         if (data.type === "single") {
@@ -138,7 +140,9 @@ document.addEventListener("DOMContentLoaded", () => {
         btn2.className = "btn";
         btn2.textContent = "Kontakt meg";
         btn2.addEventListener("click", () =>
-          document.getElementById("contact").scrollIntoView({ behavior: "smooth" })
+          document
+            .getElementById("contact")
+            .scrollIntoView({ behavior: "smooth" })
         );
         div.appendChild(btn1);
         div.appendChild(btn2);
@@ -157,9 +161,10 @@ document.addEventListener("DOMContentLoaded", () => {
         const h2 = document.createElement("h1");
         const h2Span = document.createElement("span");
         const h2Icon = document.createElement("i");
-        h2Icon.className = "bx bx-code-alt";
+        (h2Icon.className = "bx bx-code-alt") &&
+          (h2Icon.style.color = "var(--linear-gradient)");
         h2Span.appendChild(h2Icon);
-        h2Span.appendChild(document.createTextNode("Skills"));
+        h2Span.appendChild(document.createTextNode("Ferdigheter"));
         h2.appendChild(h2Span);
         const skillsDiv = document.createElement("div");
         skillsDiv.className = "skills";
@@ -365,7 +370,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const socialLinks = [
       { icon: "github", url: "https://github.com/OleM-Kodehode4" },
       { icon: "linkedin", url: "https://www.linkedin.com/in/olebrande/" },
-      { icon: "discord-alt", url: "https://discord.com/yourprofile" },
+      { icon: "bx bx-envelope", url: "" },
     ];
     socialLinks.forEach((social) => {
       const span = document.createElement("span");
