@@ -1,3 +1,6 @@
+/* ---------------------------------------------------------
+   Grunnstil: marg, padding, box-sizing, scroll-behavior, osv.
+---------------------------------------------------------- */
 * {
   margin: 0;
   padding: 0;
@@ -24,6 +27,9 @@ body {
   color: var(--text-color);
 }
 
+/* ---------------------------------------------------------
+   Navigasjon (sticky + mobilvisning)
+---------------------------------------------------------- */
 nav {
   position: sticky;
   top: 0;
@@ -105,6 +111,9 @@ span {
   display: none;
 }
 
+/* ---------------------------------------------------------
+   Seksjoner (f.eks. #home, #skill, #project, #about)
+---------------------------------------------------------- */
 section {
   min-height: 100vh;
   padding: 5% 15%;
@@ -115,6 +124,7 @@ section {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  font-family: "Poppins", sans-serif;
   gap: 2em;
   color: white;
 }
@@ -138,32 +148,30 @@ section {
 .info-box p {
   opacity: 0.8;
   color: var(--text-color-contrast);
+  cursor: default;
 }
 
 .info-box h1 {
   font-size: 4em;
-  font-weight: 300;
+  font-weight: 900;
 }
 
 .info-box h1:hover {
   opacity: 2.8;
-  cursor: default;
 }
 
 .info-box h3 {
   font-size: 2em;
-  font-weight: 400;
+  font-weight: 700;
 }
 
 .info-box h3:hover {
   opacity: 2.8;
-  cursor: default;
 }
 
 .info-box p {
   opacity: 0.7;
   color: var(--text-color-contrast);
-  cursor: default;
 }
 
 .btn-box {
@@ -181,6 +189,9 @@ section {
   color: white;
 }
 
+/* ---------------------------------------------------------
+   Scrollbar-stil
+---------------------------------------------------------- */
 ::-webkit-scrollbar {
   width: 10px;
   height: 10px;
@@ -196,6 +207,9 @@ section {
   background-color: lightgray;
 }
 
+/* ---------------------------------------------------------
+   #skill-seksjon
+---------------------------------------------------------- */
 #skill {
   background-color: var(--second-background);
   display: flex;
@@ -216,14 +230,14 @@ section {
   gap: 2em;
 }
 
-.skill-box h1 {
+.skill-box h2 {
   font-size: 4em;
+  cursor: default;
+  font-weight: 900;
 }
 
-.skill-box h1:hover {
-  font-size: 4em;
+.skill-box h2:hover {
   opacity: 0.8;
-  cursor: default;
 }
 
 .skill-box p {
@@ -252,28 +266,18 @@ section {
   align-items: center;
   gap: 0.5em;
   font-size: 1.4em;
-  transition: 0.3s ease-in-out;
+  transition: 0.2s ease-in-out;
   cursor: pointer;
 }
 
 .skills ul li span:hover {
   transform: translateX(10px);
-  color: var(--text-color);
-}
-
-.skills ul li i {
-  font-size: 1.2em;
-}
-
-.skills ul li i:hover {
-  font-size: 1.2em;
   color: white;
 }
 
-.skill-box h2 {
-  font-size: 2.5em;
-}
-
+/* ---------------------------------------------------------
+   #project-seksjon
+---------------------------------------------------------- */
 #project {
   background-color: var(--background);
 }
@@ -282,6 +286,7 @@ section {
   text-align: center;
   font-size: 4em;
   margin: 0.5em 0;
+  font-weight: 900;
 }
 
 .project-container {
@@ -296,18 +301,9 @@ section {
   cursor: default;
 }
 
-.header {
-  text-align: center;
-  font-size: 3em;
-  margin: 0.5em 0;
-}
-
-.project-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2em;
-}
-
+/* ---------------------------------------------------------
+   Bokser generelt (.box) - brukes i prosjekter, about etc.
+---------------------------------------------------------- */
 .box {
   border: 3px solid rgb(49, 49, 49);
   border-radius: 0.5em;
@@ -345,13 +341,15 @@ section {
   transform: scale(1.1);
 }
 
+/* ---------------------------------------------------------
+   #about-seksjon
+---------------------------------------------------------- */
 #about {
   background-color: var(--second-background);
   padding: 5% 15%;
   color: white;
   text-align: center;
   gap: 5em;
-  color: white;
 }
 
 #about-header {
@@ -370,6 +368,7 @@ section {
 .about h2 {
   font-size: 3em;
   margin-bottom: 1em;
+  font-weight: 900;
 }
 
 .about p {
@@ -377,13 +376,9 @@ section {
   opacity: 0.8;
 }
 
-.about a,
-.about .download-btn,
-.about .download-btn:hover,
-.about .download-btn span {
-  display: none;
-}
-
+/* ---------------------------------------------------------
+   Tilbake til toppen-knapp (#back-to-top)
+---------------------------------------------------------- */
 #back-to-top {
   position: fixed;
   bottom: 20px;
@@ -408,6 +403,9 @@ section {
   opacity: 0;
 }
 
+/* ---------------------------------------------------------
+   Kontakt-del (#contact)
+---------------------------------------------------------- */
 #contact {
   display: flex;
   align-items: center;
@@ -474,6 +472,138 @@ section {
   color: var(--linear-gradient) !important;
 }
 
+/* ---------------------------------------------------------
+   Modal
+---------------------------------------------------------- */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1001;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.modal-content {
+  background-color: var(--background);
+  margin: 25% auto;
+  padding: 25px;
+  border: 1px solid #888;
+  width: 100%;
+  max-width: 1200px;
+  border-radius: 10px;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* ---------------------------------------------------------
+   Ekstra knappestil for prosjekt-knapp (btn2)
+---------------------------------------------------------- */
+.btn2 {
+  padding: 0.5em 1em;
+  color: black;
+  font-weight: 500;
+  letter-spacing: 1px;
+  border-radius: 0.5em;
+  font-size: 1.1em;
+  border: 2px solid rgb(255, 82, 82);
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+
+.btn2:hover {
+  background-color: white;
+  color: var(--background);
+}
+
+.btn2:focus {
+  outline: 2px solid white;
+  outline-offset: 2px;
+}
+
+/* ---------------------------------------------------------
+   Animasjoner (fadeIn, etc.)
+---------------------------------------------------------- */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes bounce {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-30px);
+  }
+  60% {
+    transform: translateY(-15px);
+  }
+}
+
+.bounce {
+  animation: bounce 2s infinite;
+}
+
+/* ---------------------------------------------------------
+   Tastaturfokus (WCAG) - outline på a, button etc.
+---------------------------------------------------------- */
+a:focus,
+button:focus {
+  outline: 2px solid var(--linear-gradient);
+  outline-offset: 2px;
+}
+
+nav ul a:focus,
+.btn:focus {
+  outline: 2px solid white;
+  outline-offset: 2px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* ---------------------------------------------------------
+   MEDIA QUERIES
+---------------------------------------------------------- */
 @media (max-width: 968px) {
   section {
     padding: 8em 15%;
@@ -654,180 +784,4 @@ section {
   .social-icons i {
     font-size: 1.5em;
   }
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes slideIn {
-  from {
-    opacity: 0;
-    transform: translateX(-100%);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes bounce {
-  0%,
-  20%,
-  50%,
-  80%,
-  100% {
-    transform: translateY(0);
-  }
-  40% {
-    transform: translateY(-30px);
-  }
-  60% {
-    transform: translateY(-15px);
-  }
-}
-
-.bounce {
-  animation: bounce 2s infinite;
-}
-
-a:focus,
-button:focus {
-  outline: 2px solid var(--linear-gradient);
-  outline-offset: 2px;
-}
-
-nav ul a:focus,
-.btn:focus {
-  outline: 2px solid white;
-  outline-offset: 2px;
-}
-
-img {
-  max-width: 100%;
-  height: auto;
-}
-
-.section {
-  min-height: 100vh;
-  padding: 5% 15%;
-}
-
-.header {
-  text-align: center;
-  font-size: 5em;
-  margin: 0.5em 0;
-}
-
-.box {
-  border: 3px solid rgb(49, 49, 49);
-  border-radius: 0.5em;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  overflow: hidden;
-  object-fit: cover;
-  padding: 3em;
-  gap: 2em;
-  color: white;
-  cursor: pointer;
-  transition: 0.3s ease-in-out;
-}
-
-.box img {
-  min-width: 25px;
-  border-radius: 0.5em;
-  transition: transform 0.3s ease-in-out;
-}
-
-.box:hover img {
-  transform: scale(1.1);
-}
-
-.info-box {
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  gap: 1em;
-  max-width: 600px;
-}
-
-.info-box h1 {
-  font-size: 3em;
-  font-weight: 800;
-}
-
-.info-box h3 {
-  font-size: 2em;
-  font-weight: 400;
-}
-
-.info-box p {
-  opacity: 0.7;
-  color: var(--text-color-contrast);
-}
-
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 1001;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgba(0, 0, 0, 0.8);
-}
-
-.modal-content {
-  background-color: var(--background);
-  margin: 25% auto;
-  padding: 25px;
-  border: 1px solid #888;
-  width: 100%;
-  max-width: 1200px;
-  border-radius: 10px;
-}
-
-.close {
-  color: #aaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-  color: white;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-.btn2 {
-  padding: 0.5em 1em;
-  color: black;
-  font-weight: 500;
-  letter-spacing: 1px;
-  border-radius: 0.5em;
-  font-size: 1.1em;
-  border: 2px solid rgb(255, 82, 82);
-  cursor: pointer;
-  transition: 0.3s ease-in-out;
-}
-
-.btn2:hover {
-  background-color: white;
-  color: var(--background);
-}
-
-.btn2:focus {
-  outline: 2px solid white;
-  outline-offset: 2px;
 }

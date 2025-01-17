@@ -8,7 +8,7 @@
       name="description"
       content="Ole Mathias Brænde's portfolio showcasing skills and projects in frontend development." />
     <meta name="author" content="Ole Mathias Brænde" />
-    <link rel="icon" href="/pics/pic-ole-1.jpg" type="image/x-icon" />
+    <link rel="icon" href="./favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="./style.css" />
     <link
       href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
@@ -16,6 +16,7 @@
     <script src="./script.js" defer></script>
   </head>
   <body>
+    <!-- MODAL for prosjekter -->
     <div
       id="projectModal"
       class="modal"
@@ -28,9 +29,12 @@
           src=""
           width="100%"
           height="500px"
-          aria-labelledby="projectModalLabel"></iframe>
+          aria-labelledby="projectModalLabel">
+        </iframe>
       </div>
     </div>
+
+    <!-- Tilbake til toppen-knapp -->
     <button id="back-to-top" aria-label="Tilbake til toppen">
       <i class="bx bx-up-arrow-alt"></i>
     </button>
