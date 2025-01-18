@@ -38,9 +38,13 @@ document.addEventListener("DOMContentLoaded", () => {
    */
   function fetchJoke(paragraph) {
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     fetch(
       "https://v2.jokeapi.dev/joke/Programming?blacklistFlags=racist,sexist,explicit"
     )
+=======
+    fetch("https://v2.jokeapi.dev/joke/Programming?blacklistFlags=racist,sexist,explicit")
+>>>>>>> Stashed changes
 =======
     fetch("https://v2.jokeapi.dev/joke/Programming?blacklistFlags=racist,sexist,explicit")
 >>>>>>> Stashed changes
@@ -145,7 +149,11 @@ document.addEventListener("DOMContentLoaded", () => {
     h1.id = "home-header";
     const h1Span = document.createElement("span");
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     h1Span.textContent = "Ole Brænde";
+=======
+    h1Span.textContent = "Ole Mathias Brænde";
+>>>>>>> Stashed changes
 =======
     h1Span.textContent = "Ole Mathias Brænde";
 >>>>>>> Stashed changes
@@ -329,8 +337,11 @@ document.addEventListener("DOMContentLoaded", () => {
         iframe.src = project.link || "";
         modal.style.display = "block";
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 
         modal.scrollIntoView({ behavior: "smooth" });
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
       });
