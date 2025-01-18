@@ -37,9 +37,13 @@ document.addEventListener("DOMContentLoaded", () => {
    * Hjelpefunksjon: Henter en vits fra JokeAPI og setter tekst i <p>.
    */
   function fetchJoke(paragraph) {
+<<<<<<< Updated upstream
     fetch(
       "https://v2.jokeapi.dev/joke/Programming?blacklistFlags=racist,sexist,explicit"
     )
+=======
+    fetch("https://v2.jokeapi.dev/joke/Programming?blacklistFlags=racist,sexist,explicit")
+>>>>>>> Stashed changes
       .then((response) => response.json())
       .then((data) => {
         if (data.type === "single") {
@@ -140,7 +144,11 @@ document.addEventListener("DOMContentLoaded", () => {
     const h1 = document.createElement("h1");
     h1.id = "home-header";
     const h1Span = document.createElement("span");
+<<<<<<< Updated upstream
     h1Span.textContent = "Ole Brænde";
+=======
+    h1Span.textContent = "Ole Mathias Brænde";
+>>>>>>> Stashed changes
     h1.appendChild(h1Span);
 
     const h3 = document.createElement("h3");
@@ -320,8 +328,11 @@ document.addEventListener("DOMContentLoaded", () => {
         const iframe = document.getElementById("projectFrame");
         iframe.src = project.link || "";
         modal.style.display = "block";
+<<<<<<< Updated upstream
 
         modal.scrollIntoView({ behavior: "smooth" });
+=======
+>>>>>>> Stashed changes
       });
 
       box.appendChild(projectTitle);

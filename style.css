@@ -231,6 +231,7 @@ section {
 }
 
 .skill-box h2 {
+<<<<<<< Updated upstream
   font-size: 4em;
   cursor: default;
   font-weight: 900;
@@ -238,6 +239,9 @@ section {
 
 .skill-box h2:hover {
   opacity: 0.8;
+=======
+  font-size: 2.5em;
+>>>>>>> Stashed changes
 }
 
 .skill-box p {
@@ -272,7 +276,11 @@ section {
 
 .skills ul li span:hover {
   transform: translateX(10px);
+<<<<<<< Updated upstream
   color: white;
+=======
+  color: var(--text-color);
+>>>>>>> Stashed changes
 }
 
 /* ---------------------------------------------------------
