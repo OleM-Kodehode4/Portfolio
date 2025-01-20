@@ -9,8 +9,6 @@
   list-style: none;
   scroll-behavior: smooth;
   font-family: "Poppins", sans-serif;
-  animation: fadeIn 0.9s ease-out;
-  transition: ease-in-out 0.3s;
 }
 
 :root {
@@ -25,6 +23,8 @@ body {
   min-height: 100vh;
   background-color: var(--background);
   color: var(--text-color);
+  animation: fadeIn 0.9s ease-out;
+  transition: ease-in-out 0.3s;
 }
 
 /* ---------------------------------------------------------
@@ -231,21 +231,14 @@ section {
 }
 
 .skill-box h2 {
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
   font-size: 4em;
   cursor: default;
   font-weight: 900;
 }
 
 .skill-box h2:hover {
+  font-size: 4em;
   opacity: 0.8;
-=======
-  font-size: 2.5em;
->>>>>>> Stashed changes
-=======
-  font-size: 2.5em;
->>>>>>> Stashed changes
 }
 
 .skill-box p {
@@ -274,21 +267,12 @@ section {
   align-items: center;
   gap: 0.5em;
   font-size: 1.4em;
-  transition: 0.2s ease-in-out;
   cursor: pointer;
+  font-weight: bold;
 }
 
 .skills ul li span:hover {
-  transform: translateX(10px);
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-  color: white;
-=======
   color: var(--text-color);
->>>>>>> Stashed changes
-=======
-  color: var(--text-color);
->>>>>>> Stashed changes
 }
 
 /* ---------------------------------------------------------

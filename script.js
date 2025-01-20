@@ -37,17 +37,9 @@ document.addEventListener("DOMContentLoaded", () => {
    * Hjelpefunksjon: Henter en vits fra JokeAPI og setter tekst i <p>.
    */
   function fetchJoke(paragraph) {
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
     fetch(
       "https://v2.jokeapi.dev/joke/Programming?blacklistFlags=racist,sexist,explicit"
     )
-=======
-    fetch("https://v2.jokeapi.dev/joke/Programming?blacklistFlags=racist,sexist,explicit")
->>>>>>> Stashed changes
-=======
-    fetch("https://v2.jokeapi.dev/joke/Programming?blacklistFlags=racist,sexist,explicit")
->>>>>>> Stashed changes
       .then((response) => response.json())
       .then((data) => {
         if (data.type === "single") {
@@ -148,15 +140,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const h1 = document.createElement("h1");
     h1.id = "home-header";
     const h1Span = document.createElement("span");
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
     h1Span.textContent = "Ole Brænde";
-=======
-    h1Span.textContent = "Ole Mathias Brænde";
->>>>>>> Stashed changes
-=======
-    h1Span.textContent = "Ole Mathias Brænde";
->>>>>>> Stashed changes
     h1.appendChild(h1Span);
 
     const h3 = document.createElement("h3");
@@ -197,7 +181,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   /**
-   * Oppretter seksjonen #skill.
+   * Oppretter seksjonen #skill - Ferdigheter.
    */
   function createSkillSection() {
     const skillBox = document.createElement("div");
@@ -264,7 +248,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   /**
-   * Oppretter seksjonen #project.
+   * Oppretter seksjonen #project - Prosjekter.
    */
   function createProjectSection() {
     const header = document.createElement("h1");
@@ -336,14 +320,8 @@ document.addEventListener("DOMContentLoaded", () => {
         const iframe = document.getElementById("projectFrame");
         iframe.src = project.link || "";
         modal.style.display = "block";
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
 
         modal.scrollIntoView({ behavior: "smooth" });
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
       });
 
       box.appendChild(projectTitle);
@@ -357,7 +335,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   /**
-   * Oppretter seksjonen #about.
+   * Oppretter seksjonen #about - Om meg.
    */
   function createAboutSection() {
     const header = document.createElement("h1");
