@@ -145,7 +145,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const h3 = document.createElement("h3");
     const h3Span = document.createElement("span");
-    h3Span.textContent = "Jr. Frontend | IT-Dev";
+    h3Span.textContent = "Jr. Frontend | IT-Utvikler";
     h3.appendChild(h3Span);
 
     const p = document.createElement("p");
@@ -191,7 +191,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const h2Span = document.createElement("span");
     const h2Icon = document.createElement("i");
     h2Icon.className = "bx bx-code-alt";
-    h2Icon.style.color = "var(--linear-gradient)";
     h2Span.appendChild(h2Icon);
     h2Span.appendChild(document.createTextNode("Ferdigheter"));
     h2.appendChild(h2Span);
