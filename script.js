@@ -1,16 +1,8 @@
 document.addEventListener("DOMContentLoaded", () => {
-  /*
-    1) Slå av nettleserens "scrollRestoration",
-       slik at vi ikke gjenoppretter scroll-posisjon ved reload.
-  */
   if ("scrollRestoration" in history) {
     history.scrollRestoration = "manual";
   }
 
-  /*
-    2) Fjern hash fra URL hvis siden lastes med "#..."
-       (hindrer at nettleseren automatisk scroller dit).
-  */
   if (window.location.hash) {
     history.replaceState(null, null, " ");
   }
