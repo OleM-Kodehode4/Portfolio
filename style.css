@@ -234,11 +234,12 @@ section {
   font-size: 4em;
   cursor: default;
   font-weight: 900;
+  opacity: 0.8;
 }
 
 .skill-box h2:hover {
   font-size: 4em;
-  opacity: 0.8;
+  opacity: 2.8;
 }
 
 .skill-box p {
@@ -273,6 +274,7 @@ section {
 
 .skills ul li span:hover {
   color: var(--text-color);
+  opacity: 0.8;
 }
 
 /* ---------------------------------------------------------
@@ -287,6 +289,7 @@ section {
   font-size: 4em;
   margin: 0.5em 0;
   font-weight: 900;
+  opacity: 0.8;
 }
 
 .project-container {
@@ -296,9 +299,9 @@ section {
 }
 
 #project .header:hover {
-  font-size: 4em;
-  opacity: 0.8;
+  opacity: 2.8;
   cursor: default;
+  font-weight: 900;
 }
 
 /* ---------------------------------------------------------
@@ -329,6 +332,13 @@ section {
 
 .box h1 {
   font-size: 2em;
+  font-weight: 900;
+  text-align: center;
+  opacity: 0.8;
+}
+
+.box h1:hover {
+  opacity: 2.8;
 }
 
 .box img {
@@ -357,11 +367,12 @@ section {
   flex-direction: column;
   gap: 1em;
   font-size: 4em;
+  opacity: 0.8;
+  margin-bottom: 15px;
 }
 
 #about-header:hover {
-  font-size: 4em;
-  opacity: 0.8;
+  opacity: 2.8;
   cursor: default;
 }
 
@@ -449,6 +460,12 @@ section {
 
 .col-right span {
   font-size: 1.3em;
+  opacity: 0.8;
+  cursor: default;
+}
+
+.col-right span:hover {
+  opacity: 2.8;
 }
 
 .col-right .social-icons {
@@ -469,7 +486,7 @@ section {
 }
 
 .social-icons a {
-  color: var(--linear-gradient) !important;
+  color: var(--linear-gradient);
 }
 
 /* ---------------------------------------------------------
@@ -650,10 +667,10 @@ img {
     flex-direction: column;
   }
   #skill img {
-    width: 32vw;
+    width: 30vw;
   }
   #skill h1 {
-    font-size: 4em;
+    font-size: 2em;
   }
   #skill ul {
     font-size: 1em;
