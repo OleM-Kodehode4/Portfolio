@@ -1,0 +1,18 @@
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2em;
+}
+
+.projects-grid .box {
+  border: 2px solid var(--text-contrast);
+  border-radius: 0.5em;
+  padding: 1.5em;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.projects-grid .box:hover {
+  transform: scale(1.05);
+  border-color: var(--text-main);
+}

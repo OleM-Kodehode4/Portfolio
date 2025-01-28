@@ -242,87 +242,42 @@ document.addEventListener("DOMContentLoaded", () => {
    * Oppretter seksjonen #project - Prosjekter.
    */
   function createProjectSection() {
-    const header = document.createElement("h1");
-    header.id = "project-header";
-    header.className = "header";
+    const section = document.createElement("section");
+    section.id = "project";
 
+    // Header med span
+    const header = document.createElement("h1");
     const headerSpan = document.createElement("span");
     headerSpan.textContent = "Prosjekter";
     header.appendChild(headerSpan);
 
-    const container = document.createElement("div");
-    container.className = "project-container";
+    // Prosjektboks
+    const box = document.createElement("div");
+    box.className = "box";
 
-    const projects = [
-      {
-        title: "Prosjekt-1",
-        desc:
-          "Lorem ipsum dolor sit amet consectetur adipisicing elit. " +
-          "Esse cum fugiat quaerat. Aliquid accusamus, provident autem, aperiam magnam recusandae vero obcaecati " +
-          "asperiores ratione veniam, placeat perferendis nemo! In asperiores laudantium unde perferendis, blanditiis " +
-          "at nulla voluptate nesciunt exercitationem pariatur sunt.",
-        img: "./pics/web-design.jpg",
-        link: "https://olem-kodehode4.github.io/React-menu-app/",
-      },
-      {
-        title: "Prosjekt-2",
-        desc:
-          "Lorem ipsum dolor sit amet consectetur adipisicing elit. " +
-          "Esse cum fugiat quaerat. Aliquid accusamus, provident autem, aperiam magnam recusandae vero obcaecati " +
-          "asperiores ratione veniam, placeat perferendis nemo! In asperiores laudantium unde perferendis, blanditiis " +
-          "at nulla voluptate nesciunt exercitationem pariatur sunt.",
-        img: "./pics/web-dev.jpg",
-        link: "https://olem-kodehode4.github.io/juleoppgave/",
-      },
-      {
-        title: "Prosjekt-3",
-        desc:
-          "Lorem ipsum dolor sit amet consectetur adipisicing elit. " +
-          "Esse cum fugiat quaerat. Aliquid accusamus, provident autem, aperiam magnam recusandae vero obcaecati " +
-          "asperiores ratione veniam, placeat perferendis nemo! In asperiores laudantium unde perferendis, blanditiis " +
-          "at nulla voluptate nesciunt exercitationem pariatur sunt.",
-        img: "./pics/web-dev.jpg",
-      },
-    ];
+    const title = document.createElement("h2");
+    title.textContent = "React Menu App";
 
-    projects.forEach((project) => {
-      const box = document.createElement("div");
-      box.className = "box";
+    const description = document.createElement("p");
+    description.textContent =
+      "Et dynamisk navigeringsprosjekt laget med React.";
 
-      const projectTitle = document.createElement("h1");
-      const projectTitleSpan = document.createElement("span");
-      projectTitleSpan.textContent = project.title;
-      projectTitle.appendChild(projectTitleSpan);
+    const link = document.createElement("a");
+    link.href = "projects.html";
+    link.className = "btn";
+    link.textContent = "Se alle prosjekter";
 
-      const desc = document.createElement("p");
-      desc.textContent = project.desc;
+    // Sett sammen elementene
+    box.appendChild(title);
+    box.appendChild(description);
+    box.appendChild(link);
 
-      const img = document.createElement("img");
-      img.src = project.img;
-      img.alt = project.title;
-      img.dataset.src = project.img;
-      img.classList.add("lazy");
+    section.appendChild(header);
+    section.appendChild(box);
 
-      const btn2 = document.createElement("button");
-      btn2.className = "btn2";
-      btn2.textContent = "Vis prosjekt";
-      btn2.addEventListener("click", () => {
-        const modal = document.getElementById("projectModal");
-        const iframe = document.getElementById("projectFrame");
-        iframe.src = project.link || "";
-        modal.style.display = "block";
-
-        modal.scrollIntoView({ behavior: "smooth" });
-      });
-
-      box.appendChild(projectTitle);
-      box.appendChild(desc);
-      box.appendChild(img);
-      box.appendChild(btn2);
-      container.appendChild(box);
-    });
-
-    createSection("project", [header, container]);
+    // Plasser seksjonen riktig
+    const aboutSection = document.getElementById("about");
+    document.body.insertBefore(section, aboutSection);
   }
 
   /**
