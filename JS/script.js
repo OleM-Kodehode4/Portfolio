@@ -258,18 +258,26 @@ document.addEventListener("DOMContentLoaded", () => {
     const title = document.createElement("h2");
     title.textContent = "React Menu App";
 
+    // Beskrivelse
     const description = document.createElement("p");
     description.textContent =
       "Et dynamisk navigeringsprosjekt laget med React.";
 
+    // Bilde
+    const image = document.createElement("img");
+    image.src = "./pics/graphic.jpg";
+    image.className = "img";
+
+    // Knapp
     const link = document.createElement("a");
     link.href = "projects.html";
     link.className = "btn";
-    link.textContent = "Se alle prosjekter";
+    link.textContent = "Se flere prosjekter";
 
     // Sett sammen elementene
     box.appendChild(title);
     box.appendChild(description);
+    box.appendChild(image);
     box.appendChild(link);
 
     section.appendChild(header);
