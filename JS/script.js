@@ -356,33 +356,33 @@ document.addEventListener("DOMContentLoaded", () => {
     const colBox1 = document.createElement("div");
     colBox1.className = "col-box";
     const mapIcon = document.createElement("i");
-    mapIcon.className = "bx bx-map";
+    mapIcon.className = "bx bx-copyright";
     const mapSpan = document.createElement("span");
-    mapSpan.textContent = "Oljegata 69, 6969, Volda";
+    mapSpan.textContent = "2025 Ole Mathias Brænde";
     colBox1.appendChild(mapIcon);
     colBox1.appendChild(mapSpan);
 
-    const colBox2 = document.createElement("div");
-    colBox2.className = "col-box";
-    const phoneIcon = document.createElement("i");
-    phoneIcon.className = "bx bx-phone";
-    const phoneSpan = document.createElement("span");
-    phoneSpan.textContent = "+47 123 45 678";
-    colBox2.appendChild(phoneIcon);
-    colBox2.appendChild(phoneSpan);
+    // const colBox2 = document.createElement("div");
+    // colBox2.className = "col-box";
+    // const phoneIcon = document.createElement("i");
+    // phoneIcon.className = "bx bx-phone";
+    // const phoneSpan = document.createElement("span");
+    // phoneSpan.textContent = "+47 123 45 678";
+    // colBox2.appendChild(phoneIcon);
+    // colBox2.appendChild(phoneSpan);
 
-    const colBox3 = document.createElement("div");
-    colBox3.className = "col-box";
-    const envelopeIcon = document.createElement("i");
-    envelopeIcon.className = "bx bx-envelope";
-    const envelopeSpan = document.createElement("span");
-    envelopeSpan.textContent = "example@69mail.com";
-    colBox3.appendChild(envelopeIcon);
-    colBox3.appendChild(envelopeSpan);
+    // const colBox3 = document.createElement("div");
+    // colBox3.className = "col-box";
+    // const envelopeIcon = document.createElement("i");
+    // envelopeIcon.className = "bx bx-envelope";
+    // const envelopeSpan = document.createElement("span");
+    // envelopeSpan.textContent = "example@69mail.com";
+    // colBox3.appendChild(envelopeIcon);
+    // colBox3.appendChild(envelopeSpan);
 
     colLeft.appendChild(colBox1);
-    colLeft.appendChild(colBox2);
-    colLeft.appendChild(colBox3);
+    // colLeft.appendChild(colBox2);
+    // colLeft.appendChild(colBox3);
 
     // Høyre kolonne
     const colRight = document.createElement("div");

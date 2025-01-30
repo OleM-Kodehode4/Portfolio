@@ -306,7 +306,14 @@ section {
   font-weight: 550;
   margin-bottom: 1em;
   cursor: default;
-  color: var(--text-color);
+  background: var(--linear-gradient);
+  color: transparent;
+  background-clip: text;
+  opacity: 0.8;
+}
+
+#project h2:hover {
+  opacity: 2.8;
 }
 
 #project p {
@@ -323,17 +330,6 @@ section {
   border-radius: 0.5em;
   margin-bottom: 1em;
   background-image: url("../pics/graphic.jpg");
-}
-
-#project .box {
-  max-width: 100%;
-  margin: 0 auto;
-  padding: 3em;
-  border: 2px solid var(--text-color-contrast);
-  border-radius: 0.5em;
-  background-color: var(--background);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  cursor: default;
 }
 
 /* ---------------------------------------------------------
@@ -473,12 +469,12 @@ section {
 }
 
 .col-box i {
-  font-size: 2em;
+  font-size: 0.9em;
   color: white;
 }
 
 .col-box span {
-  font-size: 1.2em;
+  font-size: 1em;
   color: white;
 }
 
@@ -491,7 +487,7 @@ section {
 }
 
 .col-right span {
-  font-size: 1.3em;
+  font-size: 1em;
   opacity: 0.8;
   cursor: default;
 }
