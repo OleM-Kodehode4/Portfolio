@@ -138,7 +138,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const h3 = document.createElement("h3");
     const h3Span = document.createElement("span");
     h3Span.textContent = "Jr. Frontend | IT-Utvikler";
-    h3.appendChild(h3Span);
+    // h3.appendChild(h3Span);
 
     const p = document.createElement("p");
     p.textContent = "Laster inn en vits...";
@@ -256,12 +256,14 @@ document.addEventListener("DOMContentLoaded", () => {
     box.className = "box";
 
     const title = document.createElement("h2");
-    title.textContent = "React Menu App";
+    title.textContent = "React Router-Karusell";
 
     // Beskrivelse
     const description = document.createElement("p");
     description.textContent =
-      "Et dynamisk navigeringsprosjekt laget med React.";
+      "Et dynamisk bildegalleri bygget med React og React Router. " +
+      "Bruker Context API for å dele state mellom komponenter og " +
+      "tilpasser seg skjermstørrelsen med media queries.";
 
     // Bilde
     const image = document.createElement("img");
@@ -393,10 +395,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const colRightP = document.createElement("p");
     colRightP.textContent =
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. " +
-      "Quisquam voluptatem, quod, quae, quos quas quia quibusdam quidem " +
-      "dolorum voluptates, doloremque quae. Quisquam voluptatem, quod, hvilke, " +
-      "quos quas quia quibusdam quidem dolorum voluptates, doloremque quae.";
+      "Jeg startet med frontend-utvikling i september 2024, drevet av en lidenskap for teknologi. " +
+      "Siden da har jeg lært moderne webteknologier og bygget flere prosjekter  " +
+      "alltid med fokus på brukervennlighet og gode løsninger.";
 
     const socialIcons = document.createElement("div");
     socialIcons.className = "social-icons";
@@ -404,7 +405,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const socialLinks = [
       { icon: "github", url: "https://github.com/OleM-Kodehode4" },
       { icon: "linkedin", url: "https://www.linkedin.com/in/olebrande/" },
-      { icon: "bx bx-envelope", url: "" },
+      { icon: "bx bx-envelope", url: "mailto:olembrande.work@gmail.com" },
     ];
 
     socialLinks.forEach((social) => {
@@ -418,7 +419,6 @@ document.addEventListener("DOMContentLoaded", () => {
         // F.eks. "bx bx-envelope"
         a.innerHTML = `<i class="${social.icon}"></i>`;
       } else {
-        // "github" eller "linkedin"
         a.innerHTML = `<i class="bx bxl-${social.icon}"></i>`;
       }
 
