@@ -256,30 +256,45 @@ document.addEventListener("DOMContentLoaded", () => {
     box.className = "box";
 
     const title = document.createElement("h2");
-    title.textContent = "React Router-Karusell";
+    title.textContent = "React Router Project";
 
-    // Beskrivelse
     const description = document.createElement("p");
     description.textContent =
-      "Et dynamisk bildegalleri bygget med React og React Router. " +
-      "Bruker Context API for å dele state mellom komponenter og " +
-      "tilpasser seg skjermstørrelsen med media queries.";
+      "Et prosjekt som viser hvordan React Router fungerer.";
 
-    // Bilde
-    const image = document.createElement("img");
-    image.src = "./pics/graphic.jpg";
-    image.className = "img";
+    // **Prosjektbilde**
+    const projectImg = document.createElement("img");
+    projectImg.src = "./pics/react-router-project.jpg"; // Sjekk at bildet eksisterer
+    projectImg.alt = "React Router Project";
+    projectImg.className = "project-image"; // Bruk denne klassen i CSS
 
-    // Knapp
+    projectImg.style.borderRadius = "0.5em";
+
+    // **GitHub-ikon som live demo-knapp**
+    const githubLink = document.createElement("a");
+    githubLink.href = "https://olebraende.github.io/react-router-project/";
+    githubLink.target = "_blank";
+    githubLink.className = "github-btn";
+    githubLink.textContent = "Her er en live demo av prosjektet: ";
+    githubLink.setAttribute("aria-label", "Se live demo på GitHub");
+
+    const githubIcon = document.createElement("i");
+    githubIcon.className = "bx bxl-github"; // Bruker Boxicons GitHub-ikon
+    githubIcon.style.fontSize = "2em";
+
+    githubLink.appendChild(githubIcon);
+
+    // Knapp for å se alle prosjekter
     const link = document.createElement("a");
     link.href = "projects.html";
     link.className = "btn";
-    link.textContent = "Se flere prosjekter";
+    link.textContent = "Se alle prosjekter";
 
     // Sett sammen elementene
     box.appendChild(title);
     box.appendChild(description);
-    box.appendChild(image);
+    box.appendChild(projectImg);
+    box.appendChild(githubLink); // **Legger til GitHub-knappen**
     box.appendChild(link);
 
     section.appendChild(header);
