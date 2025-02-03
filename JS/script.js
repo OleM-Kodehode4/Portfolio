@@ -50,63 +50,62 @@ document.addEventListener("DOMContentLoaded", () => {
    * Oppretter navigasjonen (header).
    */
   function createNav() {
+    console.log("✅ createNav() kjører!");
+
+    const body = document.body;
     const navElement = document.createElement("nav");
     navElement.setAttribute("role", "navigation");
 
-    // Logo
     const logo = document.createElement("a");
-    logo.href = "#home";
+    logo.href = "index.html";
     logo.className = "logo";
     logo.setAttribute("aria-label", "Homepage");
     const logoSpan = document.createElement("span");
     logoSpan.textContent = "Portfolio";
     logo.appendChild(logoSpan);
 
-    // Lenker
     const ul = document.createElement("ul");
     ul.className = "links";
 
-    const links = ["Hjem", "Ferdigheter", "Prosjekter", "Om meg"];
-    const ids = ["home", "skill", "project", "about"];
+    const menuItems = [
+      { text: "Hjem", href: "index.html" },
+      { text: "Ferdigheter", href: "index.html#skill" },
+      { text: "Prosjekter", href: "projects.html" },
+      { text: "Om meg", href: "index.html#about" },
+    ];
 
-    links.forEach((linkText, index) => {
+    menuItems.forEach(({ text, href }) => {
       const li = document.createElement("li");
       const a = document.createElement("a");
-      a.href = `#${ids[index]}`;
-      a.textContent = linkText;
+      a.href = href;
+      a.textContent = text;
       a.setAttribute("role", "menuitem");
       li.appendChild(a);
       ul.appendChild(li);
     });
 
-    // Meny-ikon (mobil)
     const menuIcon = document.createElement("i");
     menuIcon.className = "bx bx-menu-alt-right";
     menuIcon.id = "menu";
     menuIcon.setAttribute("aria-label", "Menu");
 
-    // Kontakt-knapp
     const contactBtn = document.createElement("a");
-    contactBtn.href = "#contact";
+    contactBtn.href = "index.html#contact";
     contactBtn.className = "btn";
     contactBtn.setAttribute("role", "button");
     contactBtn.textContent = "Kontakt Meg";
 
-    // Sett sammen i nav
     navElement.appendChild(logo);
     navElement.appendChild(ul);
     navElement.appendChild(menuIcon);
     navElement.appendChild(contactBtn);
-    body.appendChild(navElement);
+    body.insertBefore(navElement, body.firstChild);
 
-    // Toggle for mobilmeny
-    const navLinks = document.querySelector(".links");
     menuIcon.addEventListener("click", () => {
       menuIcon.classList.toggle("bx-x");
-      navLinks.classList.toggle("active");
+      ul.classList.toggle("active");
     });
 
-    // Endring av nav-stil ved scroll
     window.addEventListener("scroll", () => {
       if (window.scrollY > 50) {
         navElement.classList.add("scrolled");
@@ -262,40 +261,40 @@ document.addEventListener("DOMContentLoaded", () => {
     description.textContent =
       "Et prosjekt som viser hvordan React Router fungerer.";
 
-    // **Prosjektbilde**
+    // Prosjektbilde
     const projectImg = document.createElement("img");
-    projectImg.src = "./pics/react-router-project.jpg"; // Sjekk at bildet eksisterer
+    projectImg.src = "./pics/react-router-project.jpg";
     projectImg.alt = "React Router Project";
-    projectImg.className = "project-image"; // Bruk denne klassen i CSS
+    projectImg.className = "project-image";
 
-    projectImg.style.borderRadius = "0.5em";
-
-    // **GitHub-ikon som live demo-knapp**
+    // GitHub-knapp med ikon
     const githubLink = document.createElement("a");
     githubLink.href = "https://olebraende.github.io/react-router-project/";
     githubLink.target = "_blank";
     githubLink.className = "github-btn";
-    githubLink.textContent = "Her er en live demo av prosjektet: ";
     githubLink.setAttribute("aria-label", "Se live demo på GitHub");
 
     const githubIcon = document.createElement("i");
-    githubIcon.className = "bx bxl-github"; // Bruker Boxicons GitHub-ikon
-    githubIcon.style.fontSize = "2em";
+    githubIcon.className = "bx bxl-github";
 
+    const githubText = document.createTextNode(" Se Live Demo på GitHub");
+
+    githubLink.appendChild(githubText);
     githubLink.appendChild(githubIcon);
 
     // Knapp for å se alle prosjekter
-    const link = document.createElement("a");
-    link.href = "projects.html";
-    link.className = "btn";
-    link.textContent = "Se alle prosjekter";
+    const allProjectsLink = document.createElement("a");
+    allProjectsLink.href = "projects.html";
+    allProjectsLink.target = "_blank";
+    allProjectsLink.className = "btn";
+    allProjectsLink.textContent = "Se alle prosjekter";
 
     // Sett sammen elementene
     box.appendChild(title);
     box.appendChild(description);
     box.appendChild(projectImg);
-    box.appendChild(githubLink); // **Legger til GitHub-knappen**
-    box.appendChild(link);
+    box.appendChild(githubLink);
+    box.appendChild(allProjectsLink);
 
     section.appendChild(header);
     section.appendChild(box);

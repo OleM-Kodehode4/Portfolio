@@ -77,6 +77,47 @@ nav ul a:hover {
   opacity: 1;
 }
 
+/* Mobilmeny */
+#menu {
+  display: none;
+  color: white;
+  font-size: 3em;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  #menu {
+    display: block;
+  }
+
+  .links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background-color: rgba(15, 15, 15, 0.9);
+    text-align: center;
+  }
+
+  .links.active {
+    display: flex;
+  }
+}
+
+.logo {
+  font-size: 2em;
+  color: white;
+  font-weight: 800;
+  opacity: 0.8;
+  transition: 0.2s ease-in-out;
+}
+
+.logo:hover {
+  opacity: 1;
+}
+
 .btn {
   padding: 0.5em 1em;
   color: white;
@@ -324,39 +365,61 @@ section {
   cursor: default;
 }
 
-.github-btn {
-  display: inline-block;
-  margin-top: 1em;
-  text-align: center;
-  color: var(--text-color);
-  transition: transform 0.2s ease-in-out;
-}
-
-.github-btn:hover {
-  transform: scale(1.1);
-  color: var(--text-color-contrast);
+#project p:hover {
+  opacity: 2.8;
 }
 
 /* ---------------------------------------------------------
    Bokser generelt (.box) - brukes i prosjekter, about etc.
 ---------------------------------------------------------- */
 .box {
-  border: 3px solid rgb(49, 49, 49);
-  border-radius: 0.5em;
   display: flex;
   flex-direction: column;
+  align-items: center;
   justify-content: center;
-  overflow: hidden;
-  object-fit: cover;
-  padding: 3em;
-  gap: 2em;
-  color: white;
-  cursor: pointer;
-  transition: 0.3s ease-in-out;
+  text-align: center;
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 2em;
+  border: 2px solid var(--text-color-contrast);
+  border-radius: 0.5em;
+  background-color: var(--second-background);
+}
+
+.project-image {
+  width: 100%;
+  max-width: 1500px;
+  height: auto;
+  border-radius: 0.5em;
+  object-fit: contain;
+}
+
+.github-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  margin: 1em;
+  font-size: 1.2em;
+  color: var(--text-color);
+  text-decoration: none;
+  border: 2px solid var(--text-color-contrast);
+  padding: 0.5em 1.5em;
+  border-radius: 0.5em;
+  transition: transform 0.2s ease-in-out;
+}
+
+.github-btn i {
+  font-size: 1.5em;
+}
+
+.github-btn:hover {
+  transform: scale(1.1);
+  background-color: var(--text-color-contrast);
+  color: var(--background);
 }
 
 .box:hover {
-  border: 3px solid rgba(255, 255, 255, 0.8);
+  border: 3px solid rgba(255, 255, 255, 0.7);
 }
 
 .box p {
@@ -380,6 +443,7 @@ section {
   height: auto;
   border-radius: 0.5em;
   display: block;
+  object-fit: contain;
   transition: 0.3s ease-in-out;
 }
 
