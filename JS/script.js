@@ -277,7 +277,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const githubIcon = document.createElement("i");
     githubIcon.className = "bx bxl-github";
 
-    const githubText = document.createTextNode(" Se Live Demo på GitHub");
+    const githubText = document.createTextNode(" Se Live Demo på her");
 
     githubLink.appendChild(githubText);
     githubLink.appendChild(githubIcon);

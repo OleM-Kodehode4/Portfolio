@@ -394,11 +394,40 @@ section {
   object-fit: contain;
 }
 
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2em;
+  padding: 2em;
+}
+
+.projects-grid .box {
+  background-color: var(--second-background);
+  padding: 1.5em;
+  text-align: center;
+  border: 2px solid var(--text-color-contrast);
+  border-radius: 0.5em;
+  transition: transform 0.3s ease;
+}
+
+.projects-grid .box:hover {
+  transform: scale(1.05);
+  border-color: var(--text-color);
+}
+
+.project-image {
+  width: 100%;
+  max-width: 800px;
+  height: auto;
+  border-radius: 0.5em;
+  object-fit: contain;
+  margin-bottom: 1em;
+}
+
 .github-btn {
   display: inline-flex;
   align-items: center;
   gap: 0.5em;
-  margin: 1em;
   font-size: 1.2em;
   color: var(--text-color);
   text-decoration: none;
