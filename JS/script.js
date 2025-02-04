@@ -491,22 +491,6 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   /**
-   * Modal for prosjekter.
-   */
-  const modal = document.getElementById("projectModal");
-  const closeModalBtn = document.getElementsByClassName("close")[0];
-
-  closeModalBtn.onclick = () => {
-    modal.style.display = "none";
-  };
-
-  window.onclick = (event) => {
-    if (event.target === modal) {
-      modal.style.display = "none";
-    }
-  };
-
-  /**
    * Tilbake til toppen-knapp.
    */
   const backToTopButton = document.getElementById("back-to-top");
@@ -540,15 +524,12 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  /**
-   * Enkel hover-effekt på .box-elementer.
-   */
   document.querySelectorAll(".box").forEach((box) => {
     box.addEventListener("mouseover", () => {
-      box.style.transform = "scale(1.05)";
+      box.style.transform = "scale(1.04)";
     });
     box.addEventListener("mouseout", () => {
-      box.style.transform = "scale(1)";
+      box.style.transform = "scale(1.035)";
     });
   });
 });

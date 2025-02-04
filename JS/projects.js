@@ -78,7 +78,7 @@ document.addEventListener("DOMContentLoaded", () => {
       {
         title: "Juleoppgave",
         desc: "En interaktiv adventskalender laget med HTML, CSS og JavaScript.",
-        img: "./pics/juleoppgave.jpg",
+        img: "./pics/calendar.png",
         link: "https://olem-kodehode4.github.io/juleoppgave/",
       },
     ];

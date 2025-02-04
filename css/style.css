@@ -411,7 +411,6 @@ section {
 }
 
 .projects-grid .box:hover {
-  transform: scale(1.05);
   border-color: var(--text-color);
 }
 
@@ -435,6 +434,7 @@ section {
   padding: 0.5em 1.5em;
   border-radius: 0.5em;
   transition: transform 0.2s ease-in-out;
+  margin: 1em;
 }
 
 .github-btn i {
@@ -488,7 +488,7 @@ section {
   padding: 5% 15%;
   color: white;
   text-align: center;
-  gap: 5em;
+  gap: 1em;
 }
 
 #about-header {
