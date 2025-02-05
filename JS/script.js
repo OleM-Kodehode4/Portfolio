@@ -155,7 +155,7 @@ document.addEventListener("DOMContentLoaded", () => {
     btnGithub.className = "btn";
     btnGithub.textContent = "Github";
     btnGithub.addEventListener("click", () => {
-      window.open("https://github.com/OleM-Kodehode4", "_blank");
+      window.open("https://github.com/Olebraende", "_blank");
     });
 
     const btnContact = document.createElement("div");
@@ -417,7 +417,7 @@ document.addEventListener("DOMContentLoaded", () => {
     socialIcons.className = "social-icons";
 
     const socialLinks = [
-      { icon: "github", url: "https://github.com/OleM-Kodehode4" },
+      { icon: "github", url: "https://github.com/Olebraende" },
       { icon: "linkedin", url: "https://www.linkedin.com/in/olebrande/" },
       { icon: "bx bx-envelope", url: "mailto:olembrande.work@gmail.com" },
     ];
