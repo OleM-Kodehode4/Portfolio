@@ -11,7 +11,7 @@
 - **Hjem**: En introduksjonsseksjon med et bilde og en kort beskrivelse.
 - **Skill**: En seksjon som beskriver ferdighetene mine, inkludert API-ene jeg har jobbet med, og gir en kort biografi.
 - **Prosjekter**: En seksjon som viser frem noen av prosjektene mine med beskrivelser og bilder.
-- **Om meg**: En seksjon som inneholder informasjon om utdanning og erfaring, samt en nedlastbar CV.
+- **Om meg**: En seksjon som inneholder informasjon om utdanning og erfaring.
 - **Kontakt**: En seksjon med kontaktinformasjon og lenker til sosiale medier.
 
 ## Brukte JavaScript-teknikker
