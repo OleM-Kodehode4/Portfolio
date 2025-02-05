@@ -1,4 +1,4 @@
-# Portfolio - Ole Mathias H Brænde
+# Portfolio - Ole Brænde
 
 ## Forbedringer og tillegg
 
