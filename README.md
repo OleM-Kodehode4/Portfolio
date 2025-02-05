@@ -14,9 +14,6 @@
 - **Om meg**: En seksjon som inneholder informasjon om utdanning og erfaring, samt en nedlastbar CV.
 - **Kontakt**: En seksjon med kontaktinformasjon og lenker til sosiale medier.
 
-### Nedlastbar CV
-- En knapp er lagt til i Om meg-seksjonen som lar brukere laste ned en PDF-versjon av CV-en min.
-
 ## Brukte JavaScript-teknikker
 
 ### Dynamisk innholdsopprettelse
