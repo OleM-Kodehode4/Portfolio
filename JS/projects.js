@@ -81,6 +81,12 @@ document.addEventListener("DOMContentLoaded", () => {
         img: "./pics/calendar.png",
         link: "https://olem-kodehode4.github.io/juleoppgave/",
       },
+      {
+        title: "Pong-spill!",
+        desc: "Et enkelt pong-spill laget med HTML, CSS og JavaScript.",
+        img: "./pics/pong-game.png",
+        link: "https://olebraende.github.io/Pong-Game/",
+      },
     ];
 
     const grid = document.querySelector(".projects-grid");
