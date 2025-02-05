@@ -38,8 +38,5 @@
 ## Nåværende status
 Porteføljen er under utvikling, og flere funksjoner og innhold vil bli lagt til før den endelige innleveringen. Bilder og lenker er foreløpig ikke inkludert, og API-integrasjon er under vurdering.
 
-## Kommentar
-Denne porteføljen er langt ifra ferdig, og jeg har enda ikke funnet en API som jeg synest fungerer nokk til at jeg ønsker å implementere den på porteføljen enda. Samt at bilder og div linker ikke fungerer ei heller er lagt til. Er mye endringer jeg ønsker å gjøre men ikke alt jeg får tid til før innleveringen, skal jobbe med den slik den skal være klar til 28.Jan men deadline 20.Jan.
-
 ## Konklusjon
 Denne porteføljen er designet for å være enkel å navigere, responsiv og tilgjengelig. Jeg har brukt moderne webteknologier og beste praksis for å sikre en god brukeropplevelse. Hvis du har noen spørsmål eller tilbakemeldinger, vennligst kontakt meg via kontaktinformasjonen i porteføljen.
